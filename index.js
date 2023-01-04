@@ -103,17 +103,19 @@ clock.ontick = (evt) => {
   //AM PM -Change the image based on 24 hours
   if (util.zeroPad(hours) >= 12){ampm.text = "pm";}
   else{ampm.text = "am";}
-                              if ((util.zeroPad(hours) >= 0) && (util.zeroPad(hours) < 6)) {
+                              if (((util.zeroPad(hours) >= 0) && (util.zeroPad(hours) < 6)) 
+                                || (util.zeroPad(hours) >= 22)){
                                    dog.image = "dog/dog2start.png";
-                                   monthobject.image="background/april2.png";}
-                              else if ((util.zeroPad(hours) >= 6) && (util.zeroPad(hours) < 13 )){
+                                   monthobject.image="background/"+ months+ "2.png";}
+                              else if (((util.zeroPad(hours) >= 6) && (util.zeroPad(hours) < 13 ))
+                                || ((util.zeroPad(hours) >= 19) && (util.zeroPad(hours) < 22 ))){
                                    dog.image = "dog/dog0start.png";
-                               monthobject.image="background/mar0.png";}
+                               monthobject.image="background/"+ months+ "0.png";}
                               else if ((util.zeroPad(hours) >= 13) && (util.zeroPad(hours) < 19 )){
                                    dog.image = "dog/dog1start.png";
-                               monthobject.image="background/mar1.png";}
-                                 else {dog.image = "dog/dog2start.png";
-                                       monthobject.image="background/jan2.png";}
+                               monthobject.image="background/"+ months+ "1.png";;}
+                                 else {dog.image = "dog/dog2start.png" ;
+                                      monthobject.image="blank.png";}
 /*
   //Get Prize from Steps Goal goals.steps
   if (userActivity.adjusted.steps > goals.steps){goalreached = "show";}
