@@ -1,0 +1,59 @@
+----------DESCRIPTION:----------
+
+Virtual Pet Shiba is a cute , animated dog on your watch that you can power up with your steps. Modeled after a real Shiba, this virtual dog has all the sass and attitude of the famous Japanese Breed known as a "doge." Mako, a real Shiba puppy from California, was used as the inspiration and model for the design.
+
+Have fun exercising as this little dog gains hearts while you reach your goals. The virtual dog has three modes: sitting, walking, and sleeping. Based on your activity levels the dog will change what it does throughout the day and will have different moods.
+
+Every month there is a new surprise for your virtual pet!
+
+Monthly Themes:
+
+January: Snow, Penguin, Hat
+
+February: Hearts, Tennis Ball
+
+March: Clovers, Tennis Ball
+
+April: Easter, Tennis Ball
+
+May: Bear, Tennis Ball
+
+June: School, Graduate, Study
+
+July: Party, Sun, Cupcake
+
+August: Beach, Sand, Island
+
+September: School, Apples, Honey
+
+October: Witch, Wizard, Pumpkin
+
+November: Leaves, Cold Weather, Turkey
+
+December: Santa, Yule, Hanukkah
+
+----------How to Play:----------
+
+As you get your steps, a food bowl will light up. The number of steps needed for a food bowl is 20% of your personal goal When you click the food bowl, your virtual pet dog gets fed and earns a heart. Every day earn a total of 5 hearts when you get 100% of your steps achievement.
+
+_________STATS_____________
+
+Clock: 12 Hour or 24 Hour
+
+Walk: Miles or KM
+
+Fire : Total Daily Calories Burned
+
+Stairs: Total Daily Floors
+
+Bolt: Total Daily Active Minutes
+
+Heart : Heart Rate (Click Star to Start)
+
+Footprints: Total Daily Steps
+
+Food Bowl: Percent% of your goal reached
+
+___________________________
+
+Settings: If set active, goal, and calorie permissions are not turned on, it will print "Nan", "Null", or "0". Heart Rate activated when you click Star, click again to turn off to save battery. Heart monitor turns on when it senses change.
