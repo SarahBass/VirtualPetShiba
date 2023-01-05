@@ -108,7 +108,17 @@ clock.ontick = (evt) => {
   
   //Give dog hearts based on goal
    //Get Prize from Steps Goal goals.steps
-  if (userActivity.adjusted.steps > goals.steps)
+  if (userActivity.adjusted.steps < goals.steps/5){hearts.image = "blank.png";}
+  else if ((userActivity.adjusted.steps < ((goals.steps)*2)/5) && (userActivity.adjusted.steps > ((goals.steps*1)/5))) 
+  {hearts.image = "hearts/heart1.png";}
+  else if ((userActivity.adjusted.steps < ((goals.steps)*3)/5)&& (userActivity.adjusted.steps > ((goals.steps*2)/5)))
+  {hearts.image = "hearts/heart2.png";}
+  else if ((userActivity.adjusted.steps < ((goals.steps)*4)/5)&& (userActivity.adjusted.steps > ((goals.steps*3)/5)))
+           {hearts.image = "hearts/heart3.png";}
+  else if ((userActivity.adjusted.steps < goals.steps)&& (userActivity.adjusted.steps > ((goals.steps*4)/5)))
+           {hearts.image = "hearts/heart4.png";}
+  else if (userActivity.adjusted.steps > goals.steps){hearts.image = "hearts/heart5.png";}
+  else {hearts.image = blank.png}
   
   //Change Foreground
                 if (((util.zeroPad(hours) >= 0) && (util.zeroPad(hours) < 6)) || (util.zeroPad(hours) >= 22)){ 
