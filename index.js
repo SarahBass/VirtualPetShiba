@@ -106,6 +106,10 @@ clock.ontick = (evt) => {
   else{ampm.text = "am";}
   
   
+  //Give dog hearts based on goal
+   //Get Prize from Steps Goal goals.steps
+  if (userActivity.adjusted.steps > goals.steps)
+  
   //Change Foreground
                 if (((util.zeroPad(hours) >= 0) && (util.zeroPad(hours) < 6)) || (util.zeroPad(hours) >= 22)){ 
                   monthobject.image="background/"+ months+ "2.png";
@@ -273,15 +277,7 @@ clock.ontick = (evt) => {
                               }
                                  else {dog.image = "dog/dog2start.png" ;
                                       monthobject.image="blank.png";}
-/*
-  //Get Prize from Steps Goal goals.steps
-  if (userActivity.adjusted.steps > goals.steps){goalreached = "show";}
-  if (goalreached == "show"){ 
-                           if (months == 9){star.image = "star/oct" + (dates % 10) + ".png";}
-                           else {star.image = "star/" + (dates % 10) + ".png";}
-  }else{ star.image = "star/yellow.png";}
   
-  /*
    /*--- OPTION 2: TIME IMAGES FOR 12 HOUR CLOCK---*/
   //set class of each # IMAGE individually if needed for formatting
   if (preferences.clockDisplay === "12h") {
@@ -290,43 +286,7 @@ clock.ontick = (evt) => {
   }else {hours = util.zeroPad(hours);}
   myLabel.text = `${hours}:${mins}`; 
   /*----------------------------SHOW CLOCK END----------------------------------*/                      
- /* //PLAY FLOAT ANIMATION
-  if ( mins % 2 == 0){   
-                          
-                         eyes.image = "star/eyes.png";
-                         if (seconds % 2 == 0){mouth.image = "star/notongue.png";}
-                         else{mouth.image = "star/littlemouth.png";}   
-                           
-  //PLAY STAND ANIMATION - MOUTH CHANGES EVERY 10 MINUTES  
-    
-  }else{           eyes.image = "star/closedeyes.png"; 
-                   if ( parseInt(mins/10) == 1 ){
-                   if (seconds % 2 == 0){mouth.image = "star/littlemouth.png";}
-                   else{mouth.image = "star/tinymouth.png";}}
-                 else if (parseInt(mins/10) == 2 ){
-                   if (seconds % 2 == 0){mouth.image = "star/circlemouth.png";}
-                   else{mouth.image = "star/tinycirclemouth.png";}}
-                                     
-                 else if ( parseInt(mins/10) == 3 ){
-                   if (seconds % 2 == 0){mouth.image = "star/tinycirclemouth.png";}
-                   else{mouth.image = "star/mouth.png";}}  
-                 
-                 else if (parseInt(mins/10) == 4 ){ 
-                   if (seconds % 2 == 0){mouth.image = "star/littleovalmouth.png";}
-                   else{mouth.image = "star/tinymouth.png";}}
-                 
-                 else if (parseInt(mins/10) == 5 ){
-                   if (seconds % 2 == 0){mouth.image = "star/littlemouth.png";}
-                   else{mouth.image = "star/tinymouth.png";}}
 
-                 else if (parseInt(mins/10) == 6 ){ 
-                   if (seconds % 2 == 0){mouth.image = "star/notongue.png";}
-                   else{mouth.image = "star/littlemouth.png";}}
-                 
-                 else if (parseInt(mins/10) == 0 ){ 
-                   if (seconds % 2 == 0){mouth.image = "star/tinymouth.png";}
-                   else{mouth.image = "star/tinycirclemouth.png";}}
-      }
 /*
   /*--- Battery Functions ---*/
   display.addEventListener('change', function () { if (this.on) {checkAndUpdateBatteryLevel();}
@@ -375,26 +335,6 @@ function checkAndUpdateBatteryLevel() {
   else if (days == 6){daytext = "Saturday,";}
   else {daytext = "DAY";}
  }
-
-//You can use a convienent way to find your and upload your images
-//"file location" + number variable + ".imageformat" 
-/*
- function changeBackground(){ 
-   
-   if (months == 9){
-       if ((dates == 1)||(dates == 3)||(dates == 5)||(dates == 10)||(dates == 13)||
-          (dates == 12)||(dates == 20)||(dates == 28)||(dates == 29)||(dates == 30)
-          ||(dates == 31))
-          {background.image = "background/oct" + dates + ".jpeg";}
-       else {background.image = "background/" + dates + ".jpeg";}}
-   else if (months == 10){
-        if ((dates == 1)||(dates == 24)||(dates == 25))
-          {background.image = "background/nov" + dates + ".jpeg";}
-        else {background.image = "background/" + dates + ".jpeg";}}
-   else {background.image = "background/" + dates + ".jpeg";}  
-}
-*/
-
 
 }
 /*----------------------------END OF FUNCTIONS--------------------------------*/
