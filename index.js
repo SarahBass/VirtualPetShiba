@@ -40,7 +40,7 @@ let date = document.getElementById("date");
 let dog = document.getElementById("dog");
 let monthobject = document.getElementById("monthobject");
 let hearts = document.getElementById("hearts");
-
+let buttonnumber = 0;
 
 //Update the clock every second 
 clock.granularity = "seconds";
@@ -54,7 +54,7 @@ const boltlabel = document.getElementById("boltlabel");
 const heartlabel = document.getElementById("heartlabel");
 const stairslabel = document.getElementById("stairslabel");
 const distancelabel = document.getElementById("distancelabel");
-
+const button2 = document.getElementById("button-1");
 
 
   
@@ -105,8 +105,14 @@ clock.ontick = (evt) => {
   if (util.zeroPad(hours) >= 12){ampm.text = "pm";}
   else{ampm.text = "am";}
   
+  //Button and hearts
+   button2.onclick = function(evt) { buttonnumber++; }
   
-  //Give dog hearts based on goal
+   if (buttonnumber == 1){
+    hearts.image = "qrcode" + seconds%2 +".jpeg" 
+   }else{
+      buttonnumber = 0;
+   //Give dog hearts based on goal
    //Get Prize from Steps Goal goals.steps
   if (userActivity.adjusted.steps < goals.steps/5){hearts.image = "blank.png";}
   else if ((userActivity.adjusted.steps < ((goals.steps)*2)/5) && (userActivity.adjusted.steps > ((goals.steps*1)/5))) 
@@ -120,9 +126,24 @@ clock.ontick = (evt) => {
   else if (userActivity.adjusted.steps > goals.steps){hearts.image = "hearts/heart5.png";}
   else {hearts.image = "blank.png";}
   
+   }
+  
+  //Month Object
+  
+    if (((util.zeroPad(hours) >= 0) && (util.zeroPad(hours) < 6)) || (util.zeroPad(hours) >= 22)){ 
+                  monthobject.image="background/"+ (months)+ "2.png";}
+     else if (((util.zeroPad(hours) >= 6) && (util.zeroPad(hours) < 13 )) || ((util.zeroPad(hours) >= 19) &&                (util.zeroPad(hours) < 22 ))){
+                  monthobject.image="background/"+ (months)+ "0.png";}
+     else if ((util.zeroPad(hours) >= 13) && (util.zeroPad(hours) < 19 )){
+                   monthobject.image="background/"+ (months)+ "1.png";}
+     else { monthobject.image= "blank.png";}
+    
+  
+  
+  
   //Change Foreground
                 if (((util.zeroPad(hours) >= 0) && (util.zeroPad(hours) < 6)) || (util.zeroPad(hours) >= 22)){ 
-                  monthobject.image="background/"+ months+ "2.png";
+                  
                   if (userActivity.adjusted.steps/goals.steps > 0.8){             
                     if ( parseInt(mins/10) == 1 ){
                       if (seconds % 2 == 0){dog.image = "dog/dog2start.png";}
@@ -169,8 +190,8 @@ clock.ontick = (evt) => {
                       else{dog.image = "dog/dog2breath1.png";}}
      } else if (((util.zeroPad(hours) >= 6) && (util.zeroPad(hours) < 13 )) || ((util.zeroPad(hours) >= 19) &&       (util.zeroPad(hours) < 22 ))){
                                    
-                               monthobject.image="background/"+ months+ "0.png";
-                                 if (userActivity.adjusted.steps/goals.steps > 0.5){             
+                              
+                   if (userActivity.adjusted.steps/goals.steps > 0.5){             
                    if ( parseInt(mins/10) == 1 ){
                    if (seconds % 2 == 0){dog.image = "dog/dog0start.png";}
                    else{dog.image = "dog/dog0happy0.png";}}
@@ -227,7 +248,7 @@ clock.ontick = (evt) => {
                                 
                               }
          else if ((util.zeroPad(hours) >= 13) && (util.zeroPad(hours) < 19 )){
-                   monthobject.image="background/"+ months+ "1.png";  
+                   
                                 
                    if (userActivity.adjusted.steps/goals.steps > 0.7){             
                    if ( parseInt(mins/10) == 1 ){
@@ -285,8 +306,7 @@ clock.ontick = (evt) => {
                    else{dog.image = "dog/dog1fart.png";}}
                                 
                               }
-                                 else {dog.image = "dog/dog2start.png" ;
-                                      monthobject.image="blank.png";}
+                                 else {dog.image = "dog/dog2start.png" ;}
   
    /*--- OPTION 2: TIME IMAGES FOR 12 HOUR CLOCK---*/
   //set class of each # IMAGE individually if needed for formatting
